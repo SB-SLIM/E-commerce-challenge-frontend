@@ -1,0 +1,111 @@
+@use '../Dependencies' as *;
+.cart__item{
+    
+    width: 300px;
+    min-height: 200px;
+    padding: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    border-radius: 10px;
+    .cart__empty{
+        color: gray;
+        font-size: 14px;
+        font-weight: 700;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 0px;
+        right: 0px;
+    }
+    .cart__button{
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+   
+    &--position{
+        position: absolute;
+        top: 65px;
+        right: 0px;
+        left: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 99;
+    }
+    @include media-breakpoint-up(md){
+        &--position{
+            right: 20px;
+            left:auto;   
+        }
+    }
+    .cart__header{
+        height: 45px;
+        // border-bottom: solid 1px gray;
+        h5{
+            font-weight: 700;
+        }
+        hr{
+            margin: 0.5rem;
+            
+        }
+    }
+   
+
+
+}
+.cart__link:hover, .cart__link:active {
+    path{fill:black}
+}
+.cart__item:not(.show){
+    display: none;
+}
+
+
+.cartProduct{
+    width: 100%;
+    height: 50px;
+    margin: 5px;
+    padding: 3px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    &__details{
+        font-size: 14px;
+        color: gray;
+        width:175px;
+        .descrption{
+            white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+        .mount{
+            display: flex;
+            h6{
+                margin-left: 5px;
+                color: black;
+            font-weight: 700;}
+        }
+    }
+    &__img {
+    height: 100%;
+    width: 50px;
+        img{
+        width: 40px;
+        height: auto;
+        border-radius: 5px;
+        }  
+    }
+    .btn-delete{
+        position: relative;
+        width: 50px;
+        height: 100%;
+        svg{
+            position: absolute;
+            top: 0;
+            right:0;
+            bottom:0;
+            left:0;
+            margin: auto;
+            fill:gray;
+        }
+    }
+}

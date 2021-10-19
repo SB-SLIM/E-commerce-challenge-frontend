@@ -1,0 +1,89 @@
+@use '../Dependencies' as *;
+
+.header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 60px;
+border-bottom: solid gray 1px;
+.nav{
+    height: inherit;
+    align-items: center;
+}
+.navbar-brand{
+    color: black;
+    font-weight: 700;
+    align-self: center;
+}
+.navbar-nav{
+    height: 100%;
+}
+.nav-link{
+    color:gray;
+}
+.nav-link:hover{
+    color:black;
+    border-bottom: solid 2px $primary; 
+}
+.navbar-toggler-icon{
+    background-image: url("http://localhost:3000/assets/icon-menu.svg") ;
+    width: 20px;
+    height: 20px;
+}
+.collapse--position{
+    position: absolute;
+    top: 65px;
+    right: 0px;
+    left: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 99;
+    width: 300px;
+min-height: 200px;
+padding: 5px;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+border-radius: 10px;
+}
+
+@include media-breakpoint-up(md){
+  .navbar-toggler{
+      display: none;
+  }  
+   .navbar-collapse{
+    display: flex!important;
+    flex-basis: auto;
+    }
+     .navbar-nav{
+         flex-direction: row;
+         min-width: 300px;
+         justify-content: space-between;
+         align-items: center;
+         
+     }
+     .nav--d-flex{
+        display: flex;
+        height: inherit;
+     }
+
+     .collapse--position{
+        position: static;
+        min-height: inherit;
+        justify-content: space-between;
+        padding: 0px;
+        box-shadow: none;
+        border-radius: 0px;
+    }
+}
+&__right{
+    display: flex; 
+    min-width: 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+}
+
+.avatar img{
+    width: 50px;
+    height:  50px;
+   
+}

@@ -1,0 +1,19 @@
+@use '../Dependencies' as *;
+@use '../Base' as *;
+
+.btn{
+    color: white;
+    font-weight: $font-weight-bold;
+    width: 150px;
+    
+    &:hover {
+        color: white;
+        background-color: $pale-orange ;
+    }
+    &__title{
+        display: inline-block;
+        margin-left: 5px;
+    }
+}
+
+
