@@ -1,1 +1,1 @@
-![Design preview for social media coding challenge](public/assets/images/desktop-1440x900-0-1440 x 900.png)
+![Design preview for social media coding challenge](public/assets/images/desktop-1440x900-0-1440x900.png)
