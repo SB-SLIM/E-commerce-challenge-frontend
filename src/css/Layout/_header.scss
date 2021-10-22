@@ -16,7 +16,8 @@ border-bottom: solid gray 1px;
     align-self: center;
 }
 .navbar-nav{
-    height: 100%;
+    margin-top: 40px;
+    padding: 2rem;
 }
 .nav-link{
     color:gray;
@@ -32,32 +33,34 @@ border-bottom: solid gray 1px;
 }
 .collapse--position{
     position: absolute;
-    top: 65px;
-    right: 0px;
+    top: 0px;
     left: 0px;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 99;
-    width: 300px;
-min-height: 200px;
-padding: 5px;
-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-border-radius: 10px;
+    width: 60%;
+    height: 110%;
+    padding: 5px;
+    z-index: 2;
+
+}
+
+
+.navbar-btn-close--position{
+    left: 10px;
+    position: absolute;
+    top: 10px;
 }
 
 @include media-breakpoint-up(md){
   .navbar-toggler{
       display: none;
   }  
-   .navbar-collapse{
-    display: flex!important;
-    flex-basis: auto;
-    }
+  
      .navbar-nav{
          flex-direction: row;
          min-width: 300px;
          justify-content: space-between;
          align-items: center;
+         margin-top: 0;
+        padding: 0;
          
      }
      .nav--d-flex{
@@ -86,4 +89,35 @@ border-radius: 10px;
     width: 50px;
     height:  50px;
    
+}
+.avatar img:hover, .avatar img:active, .avatar img:focus{
+    border: 2px solid $primary;
+    border-radius: 50%;
+}
+.navbar-collapse{
+    background-color: white !important;
+    @include media-breakpoint-up(md){
+        display: flex!important;
+        flex-basis: auto;
+        background-color: transparent !important;
+    }
+}
+
+
+.flou{
+    background-color: black;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 110%;
+    z-index: 1;
+    @include media-breakpoint-up(md){
+        display: none;
+    }
+
+}
+.flou:not(.show){
+    display: none;
 }

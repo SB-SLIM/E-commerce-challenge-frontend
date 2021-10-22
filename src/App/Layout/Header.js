@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Cart from "../Components/Cart/Cart";
 
-export default function Header({ products }) {
+export default function Header({ products, counter }) {
   const [isShow, setShow] = useState(false);
   const [isCart, setCart] = useState(false);
   const handelClick = (e) => {
     let elem = document.getElementById("navbarSupportedContent");
+    let elmFlou = document.getElementsByClassName("flou")[0];
+    console.log(elmFlou);
     if (
       e.target.getAttribute("id") === "btnNavbar" ||
       e.target.parentElement.getAttribute("id") === "btnNavbar"
@@ -13,8 +15,10 @@ export default function Header({ products }) {
       if (isShow === false) {
         isCart && setCart(false);
         elem.classList.add("show");
+        elmFlou.classList.add("show");
       } else {
         elem.classList.remove("show");
+        elmFlou.classList.remove("show");
       }
       setShow(!isShow);
     } else {
@@ -46,41 +50,63 @@ export default function Header({ products }) {
           <a className="navbar-brand" href="#home">
             sneakers
           </a>
-
+          <span className="flou" />
           <div
-            className=" navbar-collapse collapse collapse--position"
+            className=" navbar-collapse  collapse collapse--position"
             id="navbarSupportedContent"
           >
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Collections
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Men
-                </a>
-              </li>
-              <li className="nav-item ">
-                <a className="nav-link " aria-current="page" href="#">
-                  Women
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link " href="#">
-                  About
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link " href="#">
-                  Contact
-                </a>
-              </li>
-            </ul>
+            <button
+              className="navbar-toggler navbar-btn-close--position"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              id="btnNavbar"
+              onClick={handelClick}
+            >
+              <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+                  fill="#69707D"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+            <div className="">
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <li className="nav-item">
+                  <a className="nav-link active" aria-current="page" href="#">
+                    Collections
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">
+                    Men
+                  </a>
+                </li>
+                <li className="nav-item ">
+                  <a className="nav-link " aria-current="page" href="#">
+                    Women
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link " href="#">
+                    About
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link " href="#">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </nav>
+
       <div className="header__right">
         <div className="cart">
           <a
@@ -103,7 +129,12 @@ export default function Header({ products }) {
               </span>
             )}
           </a>
-          <Cart isShow={isCart} id="cart" products={products} />
+          <Cart
+            isShow={isCart}
+            id="cart"
+            products={products}
+            counter={counter}
+          />
         </div>
         <div className="avatar">
           <img src="/assets/image-avatar.png" alt="avatar" />

@@ -4,11 +4,13 @@
 .btn{
     color: white;
     font-weight: $font-weight-bold;
-    width: 150px;
+    width: 100%;
+    max-width: 350px;
+    
     
     &:hover {
         color: white;
-        background-color: $pale-orange ;
+        opacity: .7;
     }
     &__title{
         display: inline-block;
@@ -17,3 +19,8 @@
 }
 
 
+@include media-breakpoint-up(md){
+    .btn{
+        max-width:250px;
+    }
+}

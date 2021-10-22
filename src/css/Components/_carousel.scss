@@ -1,0 +1,105 @@
+@use '../Dependencies' as *;
+@use '../Base' as *;
+
+
+
+img{
+    border-radius: 0px;
+    max-height: 350px;
+}
+.carousel-nav{
+    display: none;
+}
+
+
+@include media-breakpoint-up(md){
+    img{
+
+        border-radius: 20px;
+        max-height: 100%;
+    }
+
+    .carousel-control-prev-icon, .carousel-control-next-icon{
+        width:1rem;
+        height: 1rem; 
+    }
+    .carousel-control-prev{
+    left:-20px
+    }
+    .carousel-control-next{
+    right: -20px;
+    }
+     
+    .carousel-control-prev,
+    .carousel-control-next{
+        height: 30px;
+        width: 30px;
+        margin-top: 50%;
+        border-radius: 50%;
+        background-color: white;
+        &:focus,&:hover{
+            opacity: 1 !important;
+        }
+        
+    }
+    .carousel-nav{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        width: 100%;
+        max-height: 100px;
+        
+        &-item{
+            width: 20%;
+            height: auto;
+        }
+        .carousel__link{
+           img:hover{
+            opacity: .6;
+            border: solid 2px $primary;
+           }
+           img:active{
+            opacity: .6;
+            border: solid 2px $primary;
+           }
+            
+        }
+        .carousel__link:target{
+            img{
+                opacity: .6;
+                border: solid 2px $primary;
+            }
+        }
+        
+    }
+    .carousel-big{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 3;
+    }
+    .btn-close-carousel--position{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        max-width: 500px;
+        width: 100%;
+        z-index: 2;
+    }    
+    .mw-carousel-600{
+        max-width: 600px;
+    }
+}
+
+
+
+.zIndex-4{
+    z-index: 4;
+}

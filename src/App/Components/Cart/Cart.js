@@ -1,8 +1,8 @@
-import { Button } from "../Button";
+import Button from "../Button";
 import React from "react";
 import CartProduct from "./CartProduct";
 
-export default function Cart({ products, count, isShow = false }) {
+export default function Cart({ products, counter, isShow = false }) {
   // console.log("TEST SB: " + products === null);
 
   let cName = "cart__item--position cart__item ";
@@ -24,7 +24,7 @@ export default function Cart({ products, count, isShow = false }) {
           <div className="cart__empty">Your cart is empty</div>
         ) : (
           products.map((p) => (
-            <CartProduct key={p.id} product={p}></CartProduct>
+            <CartProduct key={p.id} product={p} counter={counter}></CartProduct>
           ))
         )}
         <div className="cart__button">

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function CartProduct({ product }) {
+export default function CartProduct({ product, counter }) {
   return (
     <div className="cartProduct">
       <div className="cartProduct__img">
@@ -9,8 +9,8 @@ export default function CartProduct({ product }) {
       <div className="cartProduct__details">
         <div className="descrption">{product.descrption}</div>
         <div className="mount">
-          ${product.price + ` x ` + product.qtt}
-          <h6> ${multi(product.price, product.qtt)}</h6>
+          ${product.price + ` x ` + counter}
+          <h6> ${multi(product.price, counter)}</h6>
         </div>
       </div>
       <div className="btn-delete">
