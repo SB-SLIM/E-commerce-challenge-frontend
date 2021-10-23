@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/E-commerce-challenge-frontend/static/css/main.eb3ac7b2.chunk.css",
-    "main.js": "/E-commerce-challenge-frontend/static/js/main.41f7bf9c.chunk.js",
-    "main.js.map": "/E-commerce-challenge-frontend/static/js/main.41f7bf9c.chunk.js.map",
+    "main.js": "/E-commerce-challenge-frontend/static/js/main.038e10e7.chunk.js",
+    "main.js.map": "/E-commerce-challenge-frontend/static/js/main.038e10e7.chunk.js.map",
     "runtime-main.js": "/E-commerce-challenge-frontend/static/js/runtime-main.8fab716a.js",
     "runtime-main.js.map": "/E-commerce-challenge-frontend/static/js/runtime-main.8fab716a.js.map",
     "static/js/2.756b1ce1.chunk.js": "/E-commerce-challenge-frontend/static/js/2.756b1ce1.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.8fab716a.js",
     "static/js/2.756b1ce1.chunk.js",
     "static/css/main.eb3ac7b2.chunk.css",
-    "static/js/main.41f7bf9c.chunk.js"
+    "static/js/main.038e10e7.chunk.js"
   ]
 }
