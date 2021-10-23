@@ -4,6 +4,7 @@ export default function Button({
   type = "submit",
   children,
   isIcone = false,
+  onclick,
   ...props
 }) {
   let cN = "btn btn-";
@@ -14,7 +15,7 @@ export default function Button({
   }
 
   return (
-    <button className={cN} type={type}>
+    <button className={cN} type={type} onClick={onclick}>
       {isIcone && (
         <span>
           <img

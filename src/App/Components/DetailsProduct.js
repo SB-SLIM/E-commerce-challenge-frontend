@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import ButtonCounter from "./ButtonCounter";
 import Button from "./Button";
 
-export default function DetailsProduct({ counter, value }) {
+export default function DetailsProduct({ product, onAdd }) {
+  const [counter, setCounter] = useState(0);
+  let pp = [];
+  const handelClick = (e) => {
+    pp.id = product.id;
+    pp.newPrice = product.newPrice;
+    pp.descrption = product.descrption;
+    pp.counter = counter;
+    pp.img = "/assets/image-product-1-thumbnail.jpg";
+    onAdd(pp);
+  };
+
   return (
     <div className="detailsProduct product--padding col-12 col-md-6 ">
       <div className="product__company">sneaker company</div>
@@ -16,14 +27,16 @@ export default function DetailsProduct({ counter, value }) {
       </div>
       <div className="product__mount">
         <div className="price">
-          <div className="new-price">$125</div>
-          <div className="discount">50%</div>
+          <div className="new-price">${product.newPrice}</div>
+          <div className="discount">{product.discount}</div>
         </div>
-        <div className="old-price">$250</div>
+        <div className="old-price">${product.oldPrice}</div>
       </div>
       <div className="product__btn">
-        <ButtonCounter counter={counter} value={value} />
-        <Button isIcon={true}>Add to cart</Button>
+        <ButtonCounter counter={setCounter} value={counter} />
+        <Button isIcon={true} onclick={handelClick}>
+          Add to cart
+        </Button>
       </div>
     </div>
   );

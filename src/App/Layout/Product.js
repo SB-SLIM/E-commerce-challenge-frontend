@@ -1,9 +1,16 @@
 import React from "react";
-import { Button } from "../Components/Button";
+
 import Carousel from "../Components/Carousel";
 import DetailsProduct from "../Components/DetailsProduct";
 
-export function Product({ product, onClick, isBtncarousel, counter, value }) {
+export function Product({
+  product,
+  onClick,
+  isBtncarousel,
+  counter,
+  value,
+  onAdd,
+}) {
   let imgs = product.img_big;
   console.log("TEST Product IMG " + imgs);
   return (
@@ -15,7 +22,12 @@ export function Product({ product, onClick, isBtncarousel, counter, value }) {
           img_big={imgs}
           isBtncarousel={isBtncarousel}
         />
-        <DetailsProduct counter={counter} value={value} />
+        <DetailsProduct
+          product={product}
+          counter={counter}
+          value={value}
+          onAdd={onAdd}
+        />
       </div>
     </div>
   );

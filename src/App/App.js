@@ -6,14 +6,10 @@ import "../../node_modules/bootstrap/js/dist/carousel";
 import Carousel from "./Components/Carousel";
 
 function App() {
-  const [cart, setCart] = useState([]);
+  
   const [isCarousel, setisCarousel] = useState(false);
-  const [counter, setCounter] = useState(0);
-  console.log(isCarousel);
-  let pros = [];
-
-  console.log(counter);
-
+  const [selected, setSelected] = useState([]);
+  console.log(selected);
   let p1 = {
     id: "11111",
     img: "/assets/image-product-1-thumbnail.jpg",
@@ -23,29 +19,23 @@ function App() {
       img_3: "/assets/image-product-3.jpg",
       img_4: "/assets/image-product-4.jpg",
     },
-    price: "100 €",
+    newPrice: "125",
+    discount: "50%",
+    oldPrice: "250",
     descrption:
       "Autumn Limited edition Autumn Limited edition Autumn Limited edition Autumn Limited edition",
-    qtt: "3",
   };
 
   console.log("TEST App IMG " + p1);
 
-  pros = [...pros, p1];
-  console.log("TEST App PROS " + pros);
-  useEffect(() => {
-    setCart(pros);
-  }, []);
-
   return (
     <div>
-      <Header products={cart} counter={counter}></Header>
+      <Header product={selected}></Header>
       <Product
         product={p1}
         onClick={setisCarousel}
         isBtncarousel={false}
-        counter={setCounter}
-        value={counter}
+        onAdd={setSelected}
       />
       {isCarousel && (
         <div className="carousel-big w-100 h-100" onClose={setisCarousel}>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Cart from "../Components/Cart/Cart";
 
-export default function Header({ products, counter }) {
+export default function Header({ product }) {
   const [isShow, setShow] = useState(false);
   const [isCart, setCart] = useState(false);
   const handelClick = (e) => {
@@ -122,19 +122,14 @@ export default function Header({ products, counter }) {
                 fillRule="nonzero"
               />
             </svg>
-            {products.length > 0 && (
+            {product.counter > 0 && (
               <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
-                {products.length}
+                {product.counter}
                 <span className="visually-hidden">unread messages</span>
               </span>
             )}
           </a>
-          <Cart
-            isShow={isCart}
-            id="cart"
-            products={products}
-            counter={counter}
-          />
+          <Cart isShow={isCart} id="cart" product={product} />
         </div>
         <div className="avatar">
           <img src="/assets/image-avatar.png" alt="avatar" />

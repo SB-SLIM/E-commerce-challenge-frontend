@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function CartProduct({ product, counter }) {
+export default function CartProduct({ product, onDelete }) {
   return (
     <div className="cartProduct">
       <div className="cartProduct__img">
@@ -9,11 +9,11 @@ export default function CartProduct({ product, counter }) {
       <div className="cartProduct__details">
         <div className="descrption">{product.descrption}</div>
         <div className="mount">
-          ${product.price + ` x ` + counter}
-          <h6> ${multi(product.price, counter)}</h6>
+          ${parseInt(product.newPrice) + ` x ` + product.counter}
+          <h6> ${multi(parseInt(product.newPrice), product.counter)}</h6>
         </div>
       </div>
-      <div className="btn-delete">
+      <button className="btn-delete" onClick={() => onDelete(product.id)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -28,7 +28,7 @@ export default function CartProduct({ product, counter }) {
             d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
           />
         </svg>
-      </div>
+      </button>
     </div>
   );
 }
