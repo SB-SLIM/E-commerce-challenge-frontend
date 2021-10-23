@@ -1,5 +1,5 @@
 @use '../Dependencies' as *;
-
+@use '../Base' as *;
 .header {
 display: flex;
 justify-content: space-between;
@@ -27,7 +27,7 @@ border-bottom: solid gray 1px;
     border-bottom: solid 2px $primary; 
 }
 .navbar-toggler-icon{
-    background-image: url("http://localhost:3000/assets/icon-menu.svg") ;
+    background-image: url("#{$public-URL}assets/icon-menu.svg") ;
     width: 20px;
     height: 20px;
 }

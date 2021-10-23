@@ -37,6 +37,8 @@ function App() {
         isBtncarousel={false}
         onAdd={setSelected}
       />
+
+      {/* FIXME: bug when clicking carousel: have to add attribute isClicky(true/false) */}
       {isCarousel && (
         <div className="carousel-big w-100 h-100" onClose={setisCarousel}>
           <div className="btn-close-carousel--position">

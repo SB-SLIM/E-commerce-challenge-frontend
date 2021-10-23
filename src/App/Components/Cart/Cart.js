@@ -12,6 +12,7 @@ export default function Cart({ product, isShow = false }) {
   console.log("TEST SB Cart: " + cart);
   const handelDelete = (id) => {
     let c = cart.filter((p) => p.id !== id);
+
     setCart(c);
   };
   let cName = "cart__item--position cart__item ";
