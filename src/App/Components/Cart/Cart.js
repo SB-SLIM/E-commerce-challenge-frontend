@@ -6,11 +6,10 @@ export default function Cart({ product, isShow = false }) {
   const [cart, setCart] = useState([]);
   console.log("TEST SB: " + cart);
 
-  let ppp = product;
   useEffect(() => {
-    setCart([...cart, ppp]);
+    setCart([...cart, product]);
   }, [product]);
-
+  console.log("TEST SB Cart: " + cart);
   const handelDelete = (id) => {
     let c = cart.filter((p) => p.id !== id);
     setCart(c);

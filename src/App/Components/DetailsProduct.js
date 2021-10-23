@@ -6,12 +6,18 @@ export default function DetailsProduct({ product, onAdd }) {
   const [counter, setCounter] = useState(0);
   let pp = [];
   const handelClick = (e) => {
-    pp.id = product.id;
-    pp.newPrice = product.newPrice;
-    pp.descrption = product.descrption;
-    pp.counter = counter;
-    pp.img = "/assets/image-product-1-thumbnail.jpg";
-    onAdd(pp);
+
+    if (counter === 0) {
+      return;
+    } else {
+      pp.id = product.id;
+      pp.newPrice = product.newPrice;
+      pp.descrption = product.descrption;
+      pp.counter = counter;
+      pp.img = "/assets/image-product-1-thumbnail.jpg";
+      onAdd(pp);
+    }
+    
   };
 
   return (
