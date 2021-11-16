@@ -132,7 +132,7 @@ export default function Header({ product }) {
           <Cart isShow={isCart} id="cart" product={product} />
         </div>
         <div className="avatar">
-          <img src="/assets/image-avatar.png" alt="avatar" />
+          <img src="./assets/image-avatar.png" alt="avatar" />
         </div>
       </div>
     </div>

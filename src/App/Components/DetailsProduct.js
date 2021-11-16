@@ -14,7 +14,7 @@ export default function DetailsProduct({ product, onAdd }) {
       pp.newPrice = product.newPrice;
       pp.descrption = product.descrption;
       pp.counter = counter;
-      pp.img = "/assets/image-product-1-thumbnail.jpg";
+      pp.img = "./assets/image-product-1-thumbnail.jpg";
       onAdd(pp);
     }
     
